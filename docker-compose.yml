@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  ansible:
+      build:
+        context: .
+        target: ansible
+      volumes:
+        - "${HOME}/.ssh/:/root/.ssh"
+        - ".:/code"
+      command: "tail -f /dev/null"
